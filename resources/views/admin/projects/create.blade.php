@@ -40,6 +40,14 @@
       <label for="formGroupExampleInput3" class="form-label">difficoltà progetto</label>
       <input type="text" class="form-control @error('difficulty') is-invalid @enderror" id="formGroupExampleInput3" placeholder="difficoltà" name="difficulty" value="{{old('difficulty')}}">
     </div>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        @foreach ($types as $type)
+        <option value="1">{{$type->name}}</option>
+
+        @endforeach
+
+    </select>
     {{-- input img --}}
     <div class="mb-3">
       <label for="image" class="form-label">immagine</label>

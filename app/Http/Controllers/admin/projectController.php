@@ -9,6 +9,7 @@ use App\Models\Project;
 use Illuminate\Validation\Rules\Exists;
 use App\Http\Requests\projectRequest;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Type;
 class projectController extends Controller
 {
     /**
@@ -25,10 +26,9 @@ class projectController extends Controller
      */
     public function create()
     {
-        $method='post';
-        $route= "route('admin.projects.store')";
+       $types= Type::all();
 
-        return view('admin.projects.create', compact('method', 'route'));
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
