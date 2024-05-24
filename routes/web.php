@@ -34,6 +34,7 @@ Route::middleware(['auth', 'verified'])
         'create','show','edit'
     ]);
     Route::get('/projectsType', [typeController::class, 'projectsType'])->name('projectsType');
+    Route::get('orderBy/{direction}/{column}', [projectController::class, 'orderBy'])->name('orderBy');
 });
 
 

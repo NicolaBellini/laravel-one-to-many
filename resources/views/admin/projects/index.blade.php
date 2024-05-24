@@ -14,7 +14,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">titolo</th>
+      <th scope="col"><a href="{{route('admin.orderBy', ['direction'=> $direction, 'column'=>'id'])}}">titolo</a></th>
       <th scope="col">argomento</th>
       <th scope="col">difficolta</th>
       <th scope="col">Categoria</th>

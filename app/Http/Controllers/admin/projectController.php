@@ -25,11 +25,20 @@ class projectController extends Controller
             $projectsList= Project::all();
         }
 
+        $direction='desc';
 
 
-        return view('admin.projects.index', compact('projectsList', 'projectCount'));
+        return view('admin.projects.index', compact('projectsList', 'projectCount','direction'));
     }
 
+
+    public function orderBy($direction, $column){
+        $direction= $direction ==='desc'?'asc':'desc';
+
+        $projectsList = Project::orderBy($column, $direction)->get();
+
+        return view('admin.projects.index', compact('projectsList', 'direction'));
+    }
     /**
      * Show the form for creating a new resource.
      */
