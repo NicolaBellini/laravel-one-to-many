@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Project;
 use App\functions\Helper;
+use App\Models\Type;
 
 
 class ProjectsSeeder extends Seeder
@@ -39,6 +40,7 @@ class ProjectsSeeder extends Seeder
 
         foreach($data as $item){
             $project= new Project();
+            $project->type_id = Type::inRandomOrder()->first()->id;
             $project->name= $item['name'];
             $project->topic= $item['topic'];
             $project->difficulty= $item['difficulty'];
