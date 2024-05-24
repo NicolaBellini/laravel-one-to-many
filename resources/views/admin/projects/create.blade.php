@@ -40,10 +40,12 @@
       <label for="formGroupExampleInput3" class="form-label">difficoltà progetto</label>
       <input type="text" class="form-control @error('difficulty') is-invalid @enderror" id="formGroupExampleInput3" placeholder="difficoltà" name="difficulty" value="{{old('difficulty')}}">
     </div>
-    <select class="form-select" aria-label="Default select example">
+    <label for="type_id" class="form-label">categoria</label>
+
+    <select name="type_id" class="form-select" id="type_id" aria-label="Default select example">
         <option selected>Open this select menu</option>
         @foreach ($types as $type)
-        <option value="1">{{$type->name}}</option>
+        <option value="{{$type->id}}">{{$type->name}}</option>
 
         @endforeach
 

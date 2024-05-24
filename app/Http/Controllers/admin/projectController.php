@@ -40,6 +40,7 @@ class projectController extends Controller
         // dd($request->all());
         $formData = $request->all();
 
+
         // verifico se l'immagine esiste
         if(array_key_exists('image', $formData)){
             // salvo l' immagine nello storage nella cartella upload e ottengo il percorso
