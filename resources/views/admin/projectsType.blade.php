@@ -21,7 +21,7 @@
             <td>
                 <ul>
                     @foreach ($type->projects as $project)
-                        <li>{{ $project->name }}</li>
+                        <li><a href="{{route('admin.projects.show', $project)}}">{{ $project->name }}</a></li>
                     @endforeach
                 </ul>
             </td>
