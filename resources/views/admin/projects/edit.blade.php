@@ -42,12 +42,11 @@
             <input type="text" class="form-control @error('difficulty') is-invalid @enderror" id="formGroupExampleInput3" placeholder="Another input placeholder" name="difficulty" value="{{old('difficulty', $project->difficulty)}}">
         </div>
 
-           <label for="type_id" class="form-label">categoria</label>
-
+        <label for="type_id" class="form-label">categoria</label>
         <select name="type_id" class="form-select" id="type_id" aria-label="Default select example">
-            <option selected>Open this select menu</option>
+            <option>Open this select menu</option>
             @foreach ($types as $type)
-            <option value="{{$type->id}}">{{$type->name}}</option>
+            <option value="{{$type->id}}" @if (old('type_id', $type->id)== $type->id) selected @endif>{{$type->name}}</option>
 
             @endforeach
 
