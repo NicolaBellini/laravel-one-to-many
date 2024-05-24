@@ -7,8 +7,8 @@
 
 <h1>argomento: {{$project->topic}}</h1>
 <h1>difficoltà: {{$project->difficulty}}</h1>
+{{-- stampo la categoria se presente --}}
 @if ($project->type)
-
 <p>categoria: <span class="badge text-bg-primary">{{$project->type?->name}}</span></p>
 @endif
 

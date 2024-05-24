@@ -10,6 +10,8 @@
       <th scope="col">argomento</th>
       <th scope="col">difficolta</th>
       <th scope="col">Categoria</th>
+      <th scope="col"></th>
+
 
       <th scope="col">azioni</th>
 
@@ -25,13 +27,13 @@
         <td>{{$project->type?->name}}</td>
 
         <td><img src="{{asset('storage/'. $project->image)}}" style="height: 100px" onerror="this.src='/img/placeholder.avif'" alt=""></td>
-        <td class="d-flex">
-            <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-warning ">modifica</a>
-            <a href="{{route('admin.projects.show', $project)}}" class="btn btn-primary ">vedi</a>
+        <td class="d-flex align-item-center" >
+            <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-warning h-25">modifica</a>
+            <a href="{{route('admin.projects.show', $project)}}" class="btn btn-primary h-25">vedi</a>
 
 
 
-            <form action="{{route('admin.projects.destroy', $project)}}" method="post">
+            <form action="{{route('admin.projects.destroy', $project)}}" method="post" style="height: 100px">
                 @csrf
                 @method('DELETE')
                 <button class="btn btn-danger ">elimina</button>
