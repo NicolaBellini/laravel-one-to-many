@@ -23,6 +23,9 @@
 
              <li><a href="{{route('admin.type.index')}}">modifica i tipi</a></li>
 
+             <li><a href="{{route('admin.projectsType')}}">Progetti e tipo</a></li>
+
+
            </ul>
         </div>
 
