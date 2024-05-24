@@ -2,6 +2,14 @@
 
 @section('content')
 
+@if (isset($_GET['toSearch']))
+
+<div class="alert alert-dark" role="alert">
+  La ricerca per "{{$_GET['toSearch']}}" ha prodotto {{$projectCount}} risultati
+</div>
+
+@endif
+
 <a href="{{route('admin.projects.create')}}" class="btn btn-success ">crea nuovo progetto</a>
 <table class="table">
   <thead>
