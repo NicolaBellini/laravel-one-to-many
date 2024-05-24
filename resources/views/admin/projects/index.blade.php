@@ -9,6 +9,8 @@
       <th scope="col">titolo</th>
       <th scope="col">argomento</th>
       <th scope="col">difficolta</th>
+      <th scope="col">Categoria</th>
+
       <th scope="col">azioni</th>
 
 
@@ -20,6 +22,8 @@
         <th scope="row">{{$project->name}}</th>
         <td>{{$project->topic}}</td>
         <td>{{$project->difficulty}}</td>
+        <td>{{$project->type?->name}}</td>
+
         <td><img src="{{asset('storage/'. $project->image)}}" style="height: 100px" onerror="this.src='/img/placeholder.avif'" alt=""></td>
         <td class="d-flex">
             <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-warning ">modifica</a>
